@@ -1,0 +1,7 @@
+#!/bin/bash
+
+docker run -it --rm \
+    --volume "$HOME/.cache/go-build:/root/.cache/go-build" \
+  	--volume "$GOPATH:/go" \
+	  --workdir "/go/src/github.com/hasansino/clitemplate" \
+    hasansino/golang:latest build "$@"
